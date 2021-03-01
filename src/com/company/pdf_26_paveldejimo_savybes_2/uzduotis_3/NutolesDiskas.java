@@ -9,6 +9,7 @@ public class NutolesDiskas implements Saugykla {
 
     @Override
     public void saugotiInfo(Info info) {
+        System.out.println("Issaugotai nutolusi diska");
         arrayListas.add(info);
 
     }
@@ -17,9 +18,11 @@ public class NutolesDiskas implements Saugykla {
     public Info rastiInfo(int id) {
         for (Info info : arrayListas) {
             if (info.getId() == id) {
+                System.out.println("Rasta nutolusiame diske pagal id");
                 return info;
             }
         }
+        System.out.println("Nutolusiame diske Info objektas nerastas");
         return null;
     }
 
@@ -27,9 +30,11 @@ public class NutolesDiskas implements Saugykla {
     public Info rastiInfo(String zodis) {
         for (Info info : arrayListas) {
             if (info.arYraTekste(zodis)) {
+                System.out.println("Rasta nutolusiame diske pagal zodi");
                 return info;
             }
         }
+        System.out.println("Nerasta nutolusiame diske pagal zodi");
         return null;
     }
 }

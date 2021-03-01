@@ -16,18 +16,26 @@ public class DuomenuBaze implements Saugykla {
 
     @Override
     public Info rastiInfo(int id) {
-        System.out.println("Rasta duomenu bazeje pagal id");
-        return hMapas.getOrDefault(id, null);
+
+        if (hMapas.containsKey(id)){
+            System.out.println("Rasta duomenu bazeje pagal id");
+            return hMapas.get(id);
+        }
+        else{
+            System.out.println("nerasta duomenu bazeje pagal id");
+            return null;
+        }
     }
 
     @Override
     public Info rastiInfo(String zodis) {
-        System.out.println("Rasta duomenubazeje pagal zodi");
         for (Info info: hMapas.values()){
             if (info.arYraTekste(zodis)){
+                System.out.println("Rasta duomenubazeje pagal zodi");
                 return info;
             }
         }
+        System.out.println("nerasta duomenubazeje pagal zodi");
         return null;
     }
 }
