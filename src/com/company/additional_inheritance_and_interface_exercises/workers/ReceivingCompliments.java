@@ -4,6 +4,5 @@ public interface ReceivingCompliments {
 
     void receiveCompliment();
 
-//    int getAllReceivedCompliments();
 
 }

@@ -1,6 +1,7 @@
 package com.company.additional_inheritance_and_interface_exercises.workers;
 
 public class Manager extends Worker {
+
     private static int numberOfComplimentsManagersReceived = 0;
 
     public Manager(String name, OccupationTypes occupationType) {
