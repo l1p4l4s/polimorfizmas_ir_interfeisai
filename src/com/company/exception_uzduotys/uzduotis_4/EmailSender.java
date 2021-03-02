@@ -15,16 +15,16 @@ public class EmailSender {
                     System.out.println("Redelivering email to " + email.getReceiver());
                     Thread.sleep(3000);
                 }
-                if (email.getState() == EmailState.SENT) {
-                    System.out.println("Email to " + email.getReceiver() + " delivered" + "\n");
-                    break;
-                }
                 try {
                     networkConnector.send(email);
                     email.setState(EmailState.SENT);
                 } catch (NoNetworkException e) {
                     System.out.println("Failed to send an email to " + email.getReceiver() + "\n");
                     email.setState(EmailState.REPEATING_SEND);
+                }
+                if (email.getState() == EmailState.SENT) {
+                    System.out.println("Email to " + email.getReceiver() + " delivered" + "\n");
+                    break;
                 }
             }
         }
