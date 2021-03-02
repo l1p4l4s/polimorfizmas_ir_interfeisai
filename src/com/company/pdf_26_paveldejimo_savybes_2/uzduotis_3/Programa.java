@@ -3,13 +3,14 @@ package com.company.pdf_26_paveldejimo_savybes_2.uzduotis_3;
 import org.jetbrains.annotations.NotNull;
 
 public class Programa {
-    public static void main (String arg[]){
+    public static void main(String arg[]) {
         NutolesDiskas nutolesDiskas = new NutolesDiskas();
         DuomenuBaze duomenuBaze = new DuomenuBaze();
         Info info1 = new Info(1, "Man patinka sausainiai");
         Info info2 = new Info(2, "Man patinka sriuba");
         Info info3 = new Info(3, "Man patinka sokoladiniai sausainiai");
         Info info4 = new Info(4, "Man nepatinka sausainiai");
+
         saugoti(nutolesDiskas, info1);
         saugoti(nutolesDiskas, info2);
         saugoti(nutolesDiskas, info3);
@@ -27,14 +28,16 @@ public class Programa {
         rastiPagalZodi(duomenuBaze, "sokoladiniai");
 
     }
-    static void saugoti(@NotNull Saugykla saugykla, Info info){
+
+    static void saugoti(@NotNull Saugykla saugykla, Info info) {
         saugykla.saugotiInfo(info);
     }
 
-    static void rastiPagalId(@NotNull Saugykla saugykla, int id){
+    static void rastiPagalId(@NotNull Saugykla saugykla, int id) {
         System.out.println(saugykla.rastiInfo(id));
     }
-    static void rastiPagalZodi(@NotNull Saugykla saugykla, String zodis){
+
+    static void rastiPagalZodi(@NotNull Saugykla saugykla, String zodis) {
         System.out.println(saugykla.rastiInfo(zodis));
     }
 
